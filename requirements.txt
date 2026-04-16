@@ -1,6 +1,3 @@
-# Requirements for FL-GAN + ARR experiments
-# Paper: "Beyond Similarity Metrics: Reconstruction Attacks and ARR
-#         for Privacy in Federated GAN-Based Cyber-Attack Detection"
 
 # Core
 torch>=2.1.0
@@ -8,13 +5,13 @@ numpy>=1.24.0
 pandas>=2.0.0
 scikit-learn>=1.3.0
 
-# Federated learning framework (paper §5.3)
+# Federated learning framework 
 flwr>=1.5.0          # Flower FL framework
 
-# ANN search (paper §4.1, Algorithm 1)
+# ANN search 
 faiss-cpu>=1.7.4     # use faiss-gpu if CUDA available
 
-# DP-SGD baseline (paper §5.2)
+# DP-SGD baseline 
 opacus>=1.4.0
 
 # Experiment tracking (optional)
