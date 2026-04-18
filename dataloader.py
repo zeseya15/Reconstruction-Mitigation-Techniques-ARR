@@ -201,7 +201,7 @@ def create_federated_datasets(
             sel = idx[c * samples: (c + 1) * samples]
             clients[c] = NetFlowDataset(X_train[sel], y_train[sel])
     else:
-        # Non-IID Dirichlet(α) partitioning (paper §5.4)
+        # Non-IID Dirichlet(α) partitioning (paper 5.4)
         partitions = dirichlet_partition(
             X_train, y_train,
             num_clients=num_clients,
