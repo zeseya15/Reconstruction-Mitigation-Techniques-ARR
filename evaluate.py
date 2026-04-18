@@ -9,7 +9,7 @@ reported in the paper on a saved FL-GAN checkpoint.
 Usage
 -----
 python scripts/evaluate.py \
-    --checkpoint results/arr_ton_iot_alpha0.1_N50_seed42.pt \
+    --checkpoint results/arr_toy_alpha0.1_N50_seed42.pt \
     --dataset ton_iot \
     --alpha 0.1 \
     --num_clients 50 \
