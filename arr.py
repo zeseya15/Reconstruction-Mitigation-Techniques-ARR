@@ -175,7 +175,7 @@ class ProxyReconstructor(nn.Module):
     """
     Two-hidden-layer network mapping Φ(x_f) → x̂  ∈ X.
 
-    Architecture follows paper §4.1:
+    Architecture follows paper 4.1:
       Φ(x_f) ∈ R^d  →  256  →  256  →  input_dim
     with ReLU activations.
 
@@ -255,7 +255,7 @@ class ARRTrainer:
     phi_encoder    : VIMEEncoder  (frozen after pre-training)
     input_dim      : int
     latent_dim     : int
-    lambda_arr     : float   regularisation weight (default 0.1, paper §6.3)
+    lambda_arr     : float   regularisation weight (default 0.1, paper 6.3)
     margin         : float   contrastive margin m  (default 1.0)
     k_g            : int     generator update steps per round
     k_r            : int     reconstructor steps per generator step
@@ -353,7 +353,7 @@ class ARRTrainer:
         self.G.train()
         self.D.train()
 
-        # Re-initialise proxy reconstructor (paper §4.1)
+        # Re-initialise proxy reconstructor (paper 4.1)
         self.R.reset()
 
         # Collect all local feature vectors
