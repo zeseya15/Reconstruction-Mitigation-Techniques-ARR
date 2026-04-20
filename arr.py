@@ -47,7 +47,7 @@ class VIMEEncoder(nn.Module):
     Lightweight tabular self-supervised encoder inspired by VIME
     (Yoon et al., 2020).
 
-    In this implementation Φ is a two-layer MLP trained with a
+    In this implementation Φ is a two-layer trained with a
     reconstruction objective on the local dataset before federation starts.
     The encoder is frozen during ARR training — only the generator and
     proxy reconstructor are updated.
