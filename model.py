@@ -7,8 +7,8 @@ Architecture follows the paper:
   - BiLSTM (2 layers, hidden=256, bidirectional → 512-dim output)
   - TCN block  (Conv1d + BN + ReLU)
   - Classifier head
-  - Generator  (MLP, latent_dim → input_dim)
-  - Discriminator (MLP, input_dim → scalar with gradient-penalty support)
+  - Generator  (latent_dim → input_dim)
+  - Discriminator (input_dim → scalar with gradient-penalty support)
 """
 
 import torch
