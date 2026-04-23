@@ -47,7 +47,7 @@ def _gradient_penalty(D: nn.Module, real: torch.Tensor,
                        fake: torch.Tensor,
                        lambda_gp: float = 10.0,
                        device: str = 'cpu') -> torch.Tensor:
-    """WGAN-GP penalty shared by all baselines."""
+    """GAN-GP penalty shared by all baselines."""
     B = real.size(0)
     eps = torch.rand(B, 1, device=device)
     interp = (eps * real + (1 - eps) * fake.detach()).requires_grad_(True)
