@@ -261,7 +261,7 @@ class ARRTrainer:
     k_r            : int     reconstructor steps per generator step
     lr_g           : float   generator learning rate
     lr_r           : float   reconstructor learning rate
-    lambda_gp      : float   WGAN-GP gradient penalty weight
+    lambda_gp      : float   GAN-GP gradient penalty weight
     device         : str
     """
 
@@ -379,7 +379,7 @@ class ARRTrainer:
                     fake_x = self.G(z)
                 d_real = self.D(real_x)
                 d_fake = self.D(fake_x.detach())
-                # WGAN-GP loss
+                # GAN-GP loss
                 d_loss = (d_fake.mean() - d_real.mean()
                           + self._gradient_penalty(real_x, fake_x.detach()))
                 self.opt_D.zero_grad()
@@ -434,7 +434,7 @@ class ARRTrainer:
 
         return {k: float(np.mean(v)) for k, v in losses.items() if v}
 
-    # ── WGAN-GP helper ───────────────────────────────────────────────────────
+    # ── GAN-GP helper ───────────────────────────────────────────────────────
     def _gradient_penalty(self, real: torch.Tensor,
                            fake: torch.Tensor) -> torch.Tensor:
         B = real.size(0)
